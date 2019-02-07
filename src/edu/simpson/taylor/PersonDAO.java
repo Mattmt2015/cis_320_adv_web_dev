@@ -64,7 +64,6 @@ public class PersonDAO
                 person.setPhone(rs.getString("phone"));
                 person.setBirthday(rs.getString("birthday"));
 
-
                 // Add this person to the list so we can return it.
                 list.add(person);
             }
