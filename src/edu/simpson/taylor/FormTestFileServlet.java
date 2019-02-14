@@ -15,13 +15,11 @@ public class FormTestFileServlet extends HttpServlet
     /*
     Utility function to parse out the file name that was uploaded.
      */
-    private String extractFileName(Part part)
-    {
+    private String extractFileName(Part part) {
         String contentDisp = part.getHeader("content-disposition");
         String[] items = contentDisp.split(";");
         for (String s : items) {
-            if (s.trim().startsWith("file"))
-            {
+            if (s.trim().startsWith("file")) {
                 return s.substring(s.indexOf("=") + 2, s.length()-1);
             }
         }

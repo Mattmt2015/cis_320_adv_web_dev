@@ -11,10 +11,8 @@ import java.io.PrintWriter;
 @WebServlet(name = "FormTestCheckboxServlet")
 public class FormTestCheckboxServlet extends HttpServlet
 {
-
     private void processPost(HttpServletRequest request, HttpServletResponse response, PrintWriter out)
-            throws ServletException, IOException
-    {
+            throws ServletException, IOException {
         // Grab the data we got via a parameter
         String [] vehicles = request.getParameterValues("vehicle");
 

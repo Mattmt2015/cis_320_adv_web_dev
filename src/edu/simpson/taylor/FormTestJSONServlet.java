@@ -38,9 +38,4 @@ public class FormTestJSONServlet extends HttpServlet
         // Make sure our field was set.
         out.println("Object test: "+fromJson.getFieldName());
     }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-    {
-
-    }
 }

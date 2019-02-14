@@ -9,7 +9,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 @WebServlet(name = "FormTestServlet")
-public class FormTestServlet extends HttpServlet {
+public class FormTestServlet extends HttpServlet
+{
+    /*
+      Handle Post requests
+      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         // You can output in any format, text/JSON, text/HTML, etc. We'll keep it simple

@@ -1,5 +1,7 @@
 package edu.simpson.taylor;
-
+/**
+ * This is out business object. The field names should match the JSON that goes over the wire.
+ */
 public class TestBusinessObject
 {
     private String fieldname;
