@@ -25,23 +25,13 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>FormTestJSONServlet</servlet-name>
-        <servlet-class>edu.simpson.taylor.FormTestJSONServlet</servlet-class>
+        <servlet-name>NameListEdit</servlet-name>
+        <servlet-class>edu.simpson.taylor.NameListEdit</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>FormTestJSONServlet</servlet-name>
-        <url-pattern>/api/form_test_json_servlet</url-pattern>
+        <servlet-name>NameListEdit</servlet-name>
+        <url-pattern>/api/name_list_edit</url-pattern>
     </servlet-mapping>
-
-    <servlet>
-        <servlet-name>FormTestFileServlet</servlet-name>
-        <servlet-class>edu.simpson.taylor.FormTestFileServlet</servlet-class>
-        <multipart-config>
-            <max-file-size>50000</max-file-size>
-            <max-request-size>50000</max-request-size>
-            <file-size-threshold>0</file-size-threshold>
-        </multipart-config>
-    </servlet>
 
 </web-app>

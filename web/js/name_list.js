@@ -117,6 +117,27 @@ function saveChanges()
         $('#phone').addClass("is-invalid");
         $('#phone').removeClass("is-valid");
     }
+
+    var url = "api/name_list_edit";
+    var dataToServer = { first : firstName, last : lastName, email : email, phone : phone, birthday : birthday};
+    console.log(dataToServer);
+
+    $.ajax({
+        type: 'POST',
+        url: url,
+        data: JSON.stringify(dataToServer),
+        success: function(dataFromServer)
+        {
+            console.log(dataFromServer);
+            // Need to figure out how to remove duplicate records
+            $('#datatable tr').remove();
+            updateTable();
+            $('#myModal').modal('hide');
+
+        },
+        contentType: "application/json",
+        dataType: 'text'
+    });
 }
 
 var saveItemButton = $('#saveChanges');
