@@ -130,7 +130,11 @@ function saveChanges()
         {
             console.log(dataFromServer);
             // Need to figure out how to remove duplicate records
-            $('#datatable tr').remove();
+            var rows = $('#datatable tr');
+            var i;
+            for (i = 1; i < rows.length; i++){
+                rows [i].remove();
+            }
             updateTable();
             $('#myModal').modal('hide');
 
@@ -143,6 +147,36 @@ function saveChanges()
 var saveItemButton = $('#saveChanges');
 saveItemButton.on("click", saveChanges);
 
+
+function deleteItem(e)
+{
+    console.log("Delete");
+    console.log(e.target.value);
+    var personID = parseInt(e.target.value);
+    var url = "api/name_list_delete";
+    var dataToServer = {id: personID};
+    console.log(dataToServer);
+
+    $.ajax({
+        type: 'POST',
+        url: url,
+        data: JSON.stringify(dataToServer),
+        success: function(dataFromServer)
+        {
+            console.log(dataFromServer);
+            // Need to figure out how to remove duplicate records
+            var rows = $('#datatable tr');
+            var i;
+            for (i = 1; i < rows.length; i++){
+                rows [i].remove();
+            }
+            updateTable();
+
+        },
+        contentType: "application/json",
+        dataType: 'text'
+    });
+}
 
 function updateTable()
 {
@@ -166,9 +200,12 @@ function updateTable()
                     '<td>'+json_result[i].email+ '</td>' +
                     '<td>'+phone+'</td>' +
                     '<td>'+json_result[i].birthday+'</td>' +
+                    '<td><button type=\'button\' name=\'delete\' class=\'deleteButton btn\' value=\'' + json_result[i].id + '\'>Delete</button></td>'+
                     '</tr>');
             }
             console.log("Done");
+            var buttons = $(".deleteButton");
+            buttons.on("click", deleteItem);
         }
     );
     console.log("Done");

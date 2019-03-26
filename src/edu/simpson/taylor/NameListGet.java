@@ -30,6 +30,7 @@ public class NameListGet extends javax.servlet.http.HttpServlet
 
         // Write out that string
         out.println(json);
+
     }
 }
 
