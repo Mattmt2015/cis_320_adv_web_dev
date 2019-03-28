@@ -45,5 +45,44 @@
         <url-pattern>/api/name_list_delete</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>GetCookieServlet</servlet-name>
+        <servlet-class>edu.simpson.taylor.GetCookieServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>GetCookieServlet</servlet-name>
+        <url-pattern>/api/get_cookie</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SetCookieServlet</servlet-name>
+        <servlet-class>edu.simpson.taylor.SetCookieServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SetCookieServlet</servlet-name>
+        <url-pattern>/api/set_cookie</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SetSessionServlet</servlet-name>
+        <servlet-class>edu.simpson.taylor.SetSessionServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SetSessionServlet</servlet-name>
+        <url-pattern>/api/set_session</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetSessionServlet</servlet-name>
+        <servlet-class>edu.simpson.taylor.GetSessionServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>GetSessionServlet</servlet-name>
+        <url-pattern>/api/get_session</url-pattern>
+    </servlet-mapping>
 
 </web-app>
