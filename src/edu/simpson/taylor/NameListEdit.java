@@ -114,7 +114,12 @@ public class NameListEdit extends HttpServlet
 
         if (valid)
         {
-            PersonDAO.addPerson(fromJson);
+            if (fromJson.getId()==0)
+            {
+                PersonDAO.addPerson(fromJson);
+            }
+            else
+                PersonDAO.editPerson(fromJson);
             System.out.println("It worked");
         }
 
