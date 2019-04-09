@@ -8,11 +8,6 @@ function showDialogAdd()
     // Print that we got here
     console.log("Opening add item dialog");
 
-    // Clear out the values in the form.
-    // Otherwise we'll keep values from when we last
-    // opened or hit edit.
-    // I'm getting it started, you can finish.
-
     $('#id').val("");
     $('#firstName').val("");
     $('#firstName').removeClass("is-invalid");
@@ -149,7 +144,6 @@ function saveChanges()
 var saveItemButton = $('#saveChanges');
 saveItemButton.on("click", saveChanges);
 
-
 function deleteItem(e)
 {
     console.log("Delete");
@@ -184,6 +178,7 @@ function editItem(e)
 {
     console.log("Edit");
     console.log(e.target.value);
+
     // Grab the id from the event
     var id = e.target.value;
     var firstName = e.target.parentNode.parentNode.querySelectorAll("td")[1].innerHTML;
@@ -209,9 +204,6 @@ function updateTable()
 
     $.getJSON(url, null, function(json_result)
         {
-            // json_result is an object. You can set a breakpoint, or print
-            // it to see the fields. Specifically, it is an array of objects.
-            // Here we loop the array and print the first name.
             for (var i = 0; i < json_result.length; i++)
             {
                 console.log(json_result[i].first);

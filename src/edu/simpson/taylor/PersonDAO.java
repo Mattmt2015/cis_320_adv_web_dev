@@ -126,10 +126,7 @@ public class PersonDAO
         }
     }
 
-    /**
-     * Get a list of the people in the database.
-     * @return Returns a list of instances of the People class.
-     */
+
     public static List<Person> getPeople() {
         log.log(Level.FINE, "Get people");
 
