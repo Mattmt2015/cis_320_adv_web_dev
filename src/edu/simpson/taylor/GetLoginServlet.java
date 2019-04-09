@@ -22,6 +22,8 @@ public class GetLoginServlet extends HttpServlet
 
         // - This example uses a session to keep count of client requests.
         HttpSession session = request.getSession();
+        String loginId = (String)session.getAttribute("loginId");
+        System.out.println("Login ID: " +session.getAttribute("loginId"));
 
         // At this point, you could grab something out of the session like:
         // String loginId = (String)session.getAttribute("loginId");

@@ -4,11 +4,11 @@ function login()
     var url = "api/login_servlet";
 
     // Grab data from the HTML form
-    var sessionKey = $("#sessionKey").val();
-    var sessionValue = $("#sessionValue").val();
+    //var sessionKey = $("#sessionKey").val();
+    var loginId = $("#loginId").val();
 
     // Create a JSON request based on that data
-    var dataToServer = {sessionKey : sessionKey, sessionValue : sessionValue};
+    var dataToServer = {/*sessionKey : sessionKey,*/ loginId : loginId};
 
     // Post
     $.post(url, dataToServer, function (dataFromServer)
@@ -17,8 +17,8 @@ function login()
         console.log("Finished calling servlet.");
         console.log(dataFromServer);
         // Clear the form
-        $("#sessionKey").val("");
-        $("#sessionValue").val("");
+        //$("#sessionKey").val("");
+        $("#loginId").val("");
     });
 }
 

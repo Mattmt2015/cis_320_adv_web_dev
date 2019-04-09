@@ -17,8 +17,8 @@ public class LoginServlet extends HttpServlet
         PrintWriter out = response.getWriter();
 
         // Get the data passed in from the request string
-        String sessionKey = request.getParameter("sessionKey");
-        String sessionValue = request.getParameter("sessionValue");
+        //String sessionKey = request.getParameter("sessionKey");
+        String sessionValue = request.getParameter("loginId");
 
         // Get a session object so we can get/set items in our session.
         // This will automatically create a JSESSIONID cookie for us.
@@ -26,9 +26,10 @@ public class LoginServlet extends HttpServlet
         HttpSession session = request.getSession();
 
         // Associate, in server memory, a key/value pair.
-        session.setAttribute(sessionKey, sessionValue);
+        session.setAttribute("loginId", sessionValue);
+        System.out.println("Login ID: " +session.getAttribute("loginId"));
+        System.out.println("Done setting the session variable");
 
-        out.println("Done setting the session variable");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
